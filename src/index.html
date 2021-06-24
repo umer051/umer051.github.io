@@ -65,7 +65,7 @@
                 </h4>
 
                 <button
-                  class="btn btn-primary btn-lg btn-block mb-3"
+                  class="btn btn-primary btn-lg btn-block mb-3 enableEthereumButton"
                   id="connectButton"
                   
                 >
@@ -323,7 +323,14 @@
         </div>
       </section>
     </main>
+    <script>
+    const ethereumButton = document.querySelector('.enableEthereumButton');
 
+ethereumButton.addEventListener('click', () => {
+  //Will Start the metamask extension
+  ethereum.request({ method: 'eth_requestAccounts' });
+});
+    </script>
     <script src="bundle.js" defer></script>
   </body>
 </html>

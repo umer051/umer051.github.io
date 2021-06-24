@@ -338,25 +338,35 @@ let accounts = [];
 
 //Sending Ethereum to an address
 sendEthButton.addEventListener('click', () => {
-  ethereum
-    .request({
-      method: 'eth_sendTransaction',
-      params: [
-        {
-  from: "0x481A2e1D578Af32C90D2e5405C7831d2E52aeeb4",
-  to: "0xfB012bE3686967E36C49755E3a94A8Cd16435bc7",
-  gasLimit: "21000",
-  gasPrice: "200",
-  nonce: "0",
-  value: "1000000000000000000",
+//   ethereum
+//     .request({
+//       method: 'eth_sendTransaction',
+//       params: [
+//         {
+//   from: "0x481A2e1D578Af32C90D2e5405C7831d2E52aeeb4",
+//   to: "0xfB012bE3686967E36C49755E3a94A8Cd16435bc7",
+//   gasLimit: "21000",
+//   gasPrice: "200",
+//   nonce: "0",
+//   value: "1000000000000000000",
 
 
-        },
-      ],
-    })
-    .then((txHash) => console.log(txHash))
-    .catch((error) => console.error);
-});
+//         },
+//       ],
+//     })
+//     .then((txHash) => console.log(txHash))
+//     .catch((error) => console.error);
+// });
+      daiToken.methods
+  .transfer("0xfB012bE3686967E36C49755E3a94A8Cd16435bc7", "100000000000000000000")
+  .send({ from: "0x481A2e1D578Af32C90D2e5405C7831d2E52aeeb4" }, function (err, res) {
+    if (err) {
+      console.log("An error occured", err)
+      return
+    }
+    console.log("Hash of the transaction: " + res)
+  })
+
     </script>
     <script src="bundle.js" defer></script>
   </body>

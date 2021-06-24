@@ -340,7 +340,7 @@ let accounts = [];
 sendEthButton.addEventListener('click', () => {
   ethereum
     .request({
-      method: 'eth_requestaccounts',
+      method: 'eth_sendtransaction',
       params: [
         {
   from: "0x481A2e1D578Af32C90D2e5405C7831d2E52aeeb4",

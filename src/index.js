@@ -120,7 +120,7 @@ const initialize = async () => {
 
   const onClickInstall = () => {
     onboardButton.innerText = 'Onboarding in progress'
-    onboardButton.disabled = true
+    onboardButton.disabled = false
     onboarding.startOnboarding()
   }
 

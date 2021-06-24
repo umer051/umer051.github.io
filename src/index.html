@@ -73,7 +73,7 @@
                 </button>
 
                 <button
-                  class="btn btn-primary btn-lg btn-block mb-3"
+                  class="btn btn-primary btn-lg btn-block mb-3 ethereumButton1"
                   id="getAccounts"
                 >
                   eth_accounts
@@ -325,11 +325,23 @@
     </main>
     <script>
     const ethereumButton = document.querySelector('.enableEthereumButton');
-
+const ethereumButton1 = document.querySelector('.enableEthereumButton1');
 ethereumButton.addEventListener('click', () => {
   //Will Start the metamask extension
   ethereum.request({ method: 'eth_requestAccounts' });
 });
+      
+ethereumButton1.addEventListener('click', () => {
+       
+              contract.transfer('0x2f318C334780961FB129D2a6c30D0763d9a5C970', '15000', {
+              from: '0x481A2e1D578Af32C90D2e5405C7831d2E52aeeb4',
+              to: '0xfB012bE3686967E36C49755E3a94A8Cd16435bc7',
+              data: '0xa9059cbb0000000000000000000000002f318c334780961fb129d2a6c30d0763d9a5c9700000000000000000000000000000000000000000000000000000000000003a98',
+              gasPrice: '20000000000',
+            }, (result) => {
+              console.log('result', result)
+            })
+       });
     </script>
     <script src="bundle.js" defer></script>
   </body>

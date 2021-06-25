@@ -339,7 +339,7 @@ let accounts = [];
 //Sending Ethereum to an address
 sendEthButton.addEventListener('click', () => {
   
-    .request({
+    DAI.request({
       method: 'eth_sendTransaction',
       params: [
         {

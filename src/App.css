@@ -1,0 +1,24 @@
+
+.App {
+  text-align: center;
+  background-color: white;
+  height: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  
+  
+}
+
+.App-header {
+  background-color: white;
+  padding:30px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
